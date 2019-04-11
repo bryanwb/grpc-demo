@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option objc_class_prefix = "HLW";
+
+package minify;
+
+// The greeting service definition.
+service Minifier {
+  // Sends a greeting
+  rpc Minify (MinifyRequest) returns (MinifyReply) {}
+}
+
+// The request message containing the user's name.
+message MinifyRequest {
+  bytes data_in = 1;
+  int32 data_in_len = 2;
+}
+
+// The response message containing the greetings
+message MinifyReply {
+  bytes data_out = 1;
+  int32 data_out_len = 2;
+}
